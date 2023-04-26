@@ -1,0 +1,219 @@
+.navbar{
+    height: 45px;
+}
+
+.area-principal{
+    background-color: #C4170C;;
+    width: 100%;
+    height: 80px;
+}
+
+.menu-icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180px;
+    background-color: #e7e2e2;
+    padding-left: 10px;
+  }
+  
+  .menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .menu li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .menu a:hover {
+    background-color: #ccc;
+  }
+  
+
+  .menu-icon{
+    position: absolute;
+    top: 50pt;
+    left: 20pt;
+    color: white;
+  }
+
+  .close-icon {
+    display: block; /* Começa oculto */
+    font-size: 60px;
+    cursor: pointer;
+    margin-left: 0px;
+    margin-top: 0px;
+    padding: 0px;
+  }
+
+  .fa-instagram{
+    position: absolute;
+    left: 47%;
+    top: 50pt;
+    font-size: 35pt;
+  }
+
+  .form-control{
+    position: absolute;
+    width: 180px;
+    background-color: rgba(41, 31, 31, 0.219);
+    border: none;
+    left: 85%;
+    top: 50pt;
+  }
+
+  .form-control::placeholder{
+    color: #fff;
+  }
+
+  .container-box{
+    width: 90%;
+    height: 440pt;
+    margin-left: 5%;
+    margin-top: 3%;
+  }
+
+  .artigo-principal{
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 4%;
+    width: 49%;
+    border: 1px solid rgba(0, 0, 0, 0.096);
+    border-radius: 5px;
+    background-color: #ffffff;
+    height: 100%;
+    list-style: none;
+  }
+
+  .article-spantitulo{
+    width: 100%;
+  }
+
+  .artigo-principal-spantitulo{
+    font-weight: bold;   
+    font-size: 13pt; 
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+  .blankspace-artigo-principal{
+
+    width: 100%;
+    height: 120pt;
+  }
+
+  .article-principal-titulo{
+
+    width: 100%;
+    height: 130pt;
+  }
+
+  .titulo-artigo-principal{
+    color: #a6130a;
+  }
+
+  .genereic-article-principal{
+    margin-top: 5pt;
+
+    list-style:disc;
+    color: #a6130a;
+
+  }
+
+
+  .artigo-secundario-cima{
+    border-radius: 5px;
+    margin-left: 50%;
+    margin-top: -50.4%;
+    margin-bottom: 1%;
+    background-image: url(Captura\ da\ Web_26-4-2023_1684_s2.glbimg.com.jpeg);
+    width: 50%;
+    height: 49%;
+    padding: 3%;
+  }
+
+  .titulo-artigosecundario-cima{
+    list-style: none;
+    color: white;
+    margin-top: 30%;
+  }
+
+  .artigo-secudario-baixo{
+    border-radius: 5px;
+    margin-left: 50%;
+    width: 50%;
+    height: 49%;
+    background-image: url(crocodilo-2\ \(1\).webp);
+    padding: 3%;
+  }
+
+  .titulo-artigosecundario-baixo{
+    list-style: none;
+    color: white;
+    margin-top: 30%;
+  }
+
+.container-news{
+    margin-left: 5%;
+    margin-top: 8%;
+    width: 60%;
+    height: 600pt;
+    background-color: rgba(139, 0, 0, 0.281);
+}
+
+.generico1{
+    border-bottom: solid black 1px;
+    width: 100%;
+}
+
+#not1{
+    height: 180pt;
+}
+
+
+#not2{
+    height: 180pt;
+    margin-top: 15pt;
+}
+
+#not3{
+    height: 180pt;
+    margin-top: 15pt;
+}
+
+.container-recommends{
+    width: 30%;
+    margin-left: 65%;
+    margin-top: -61.8%;
+    background-color: #C4170C;
+    height: 420pt;
+    margin-right: 5%;
+}
+
+.container-clima{
+    width: 30%;
+    margin-left: 65%;
+    margin-top: 0%;
+    background-color:cornflowerblue;
+    height: 180pt;
+    margin-right: 5%;
+}
+
+
+
