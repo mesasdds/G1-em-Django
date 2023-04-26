@@ -174,11 +174,10 @@
     margin-top: 8%;
     width: 60%;
     height: 600pt;
-    background-color: rgba(139, 0, 0, 0.281);
 }
 
 .generico1{
-    border-bottom: solid black 1px;
+    border-bottom: solid rgba(0, 0, 0, 0.247) 1px;
     width: 100%;
 }
 
@@ -186,15 +185,124 @@
     height: 180pt;
 }
 
-
-#not2{
-    height: 180pt;
-    margin-top: 15pt;
+#not1 img{
+  width: 350px;
 }
 
+.dep-titulono1{
+  position: absolute;
+  height: 10px;
+  margin-left: 1%;
+  font-weight:bold;
+  font-family: Arial;
+}
+
+.titulo-span-not1{
+  font-weight: bold;
+  margin-top: 2%;
+  position: absolute;
+  margin-left: 1%;
+  font-size: 1.5em;
+  color:#a6130a ;
+}
+
+.subtitle-span-not1{
+  position: absolute;
+  margin-top: 8%;
+  margin-left: 1%;
+  font-style: italic;
+  font-family:Arial;
+}
+
+.horario-span-not1{
+  position: absolute;
+  margin-top: 12%;
+  margin-left: 1%;
+  font-size:smaller
+}
+
+
+#not2{
+    height: 200pt;
+    margin-top: 25pt;
+}
+
+#not2 img{
+  width: 350px;
+}
+
+
+.dep-titulono2{
+  position: absolute;
+  margin-left: 1%;
+  font-weight:bold;
+  font-family: Arial;
+}
+
+
+.titulo-span-not2{
+  font-weight: bold;
+  margin-top: 2%;
+  position: absolute;
+  margin-left: 1%;
+  font-size: 1.5em;
+  color:#a6130a ;
+}
+
+.subtitle-span-not2{
+  position: absolute;
+  margin-top: 8%;
+  margin-left: 1%;
+  font-style: italic;
+  font-family:Arial;
+}
+
+.horario-span-not1{
+  position: absolute;
+  margin-top: 12%;
+  margin-left: 1%;
+  font-size:smaller
+}
+
+
 #not3{
-    height: 180pt;
-    margin-top: 15pt;
+  margin-top: 30px;
+    height: 190pt;
+}
+
+#not3 img{
+  width: 350px;
+}
+
+.dep-titulono3{
+  position: absolute;
+  margin-left: 1%;
+  font-weight:bold;
+  font-family: Arial;
+}
+
+.titulo-span-not3{
+  font-weight: bold;
+  margin-top: 2%;
+  position: absolute;
+  margin-left: 1%;
+  font-size: 1.5em;
+  color:#a6130a ;
+}
+
+.subtitle-span-not3{
+  position: absolute;
+  margin-top: 8%;
+  margin-left: 1%;
+  font-style: italic;
+  font-family:Arial;
+}
+
+.horario-span-not1{
+  position: absolute;
+  margin-top: 12%;
+  margin-left: 1%;
+  font-size:smaller
 }
 
 .container-recommends{
