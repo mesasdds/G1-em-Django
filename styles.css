@@ -8,6 +8,46 @@
     height: 80px;
 }
 
+#assine{
+  position: absolute;
+  top: 15%;
+  left: 88%;
+  color: #3333339c;
+  font-size:smaller;
+}
+
+#g1{
+  color: #c4170c;
+  font-weight: bold;
+}
+
+#ge{
+  color:#06aa48;
+  font-weight: bold;
+}
+
+#gshow{
+  color:#ff6700;
+  font-weight: bold;
+}
+
+#globoplay{
+  color:#fb0234;
+  font-weight: bold;
+}
+
+#oglobo{
+  color:#1e4c9a;
+  font-weight: bold;
+}
+
+#login1{
+  position: absolute;
+  left: 94%;
+  top: 15%;
+  font-size:smaller;
+}
+
 .menu-icon {
     font-size: 20px;
     cursor: pointer;
