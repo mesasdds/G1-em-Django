@@ -48,28 +48,7 @@
     </header>
 
     <main>
-        <div class="container-box">
-            <article class="artigo-principal">
-                <li class="article-spantitulo"><span class="artigo-principal-spantitulo">Ataque aos 3 Poderes</span></li>
-                <li class="blankspace-artigo-principal"></li>
-                <li class="article-principal-titulo"><span class="titulo-artigo-principal"><h1>Congresso cria CPI mista para investigar atos golpistas de 8 de janeiro</h1></span></li>
-                <li class="genereic-article-principal"><span>Como funciona uma CPI com deputados e senadores? Veja 5 perguntas</span></li>
-                <li class="genereic-article-principal"><span>Governo calcula ter pelo menos 20 dos 32 votos na comissão</span></li>
-                <li class="genereic-article-principal"><span>VALDO CRUZ: por que parte da oposição já se arrepende da CPI</span></li>
-            </article>
-
-            <article class="two_aricle1">
-                <span class="two_title1"><h2>Cientistas divulgam nova imagem de buraco negro expelindo jato</h2></span>
-                <!--<img class="imgs_article1" src="{% static 'images/crocoldilo.jpeg' %}" alt="">-->
-            </article>
-            <!--   -->
-
-            <article class="two_article2">
-                <span class="two_title2"><h2>VÍDEO: parque de crocodilos é inaugurado em Dubai</h2></span>
-                <!--<img class="imgs_article2" src="{% static 'images/buraconegro.jpeg' %}" alt="">-->
-            </article>
-        </div>
-
+        {% block container-box %}{% endblock %}
         <div class="container-news">
             <article class="generico1" id="not1">
                 <img src="{% static 'images/bolsonaronot.webp' %}" alt="">

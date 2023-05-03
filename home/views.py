@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import ArtigoPrincipal, ArtigoSecundario
+from .models import ArtigoPrincipal, ArtigoSecundario, ArtigoTerceiro
 
 # Create your views here.
 
@@ -9,7 +9,10 @@ def initial(request):
     return render(request, 'home/init.html')
 
 def HomeView(request):
-    return render(request, 'home/homeview.html')
+    artigoP = ArtigoPrincipal.objects.first()
+    artigoS = ArtigoSecundario.objects.first()
+    artigoT = ArtigoTerceiro.objects.first()
+    return render(request, 'home/homeview.html', {'artigoS':artigoS, 'artigoP':artigoP, 'artigoT':artigoT})
 
 def Index(request):
     return render(request, 'home/index.html')
@@ -17,7 +20,8 @@ def Index(request):
 def lista_artigos(request):
     artigos_principais = ArtigoPrincipal.objects.all()
     artigos_secundarios = ArtigoSecundario.objects.all()
-    return render(request, 'home/lista_artigos.html', {'artigos_principais':artigos_principais, 'artigos_secundarios':artigos_secundarios} )
+    artigos_terceiros = ArtigoTerceiro.objects.all()
+    return render(request, 'home/lista_artigos.html', {'artigos_principais':artigos_principais, 'artigos_secundarios':artigos_secundarios, 'artigos_terceiros':artigos_terceiros} )
 
 def detalhe_artigo(request, id):
     artigo_principal = ArtigoPrincipal.objects.get(id=id)
@@ -29,7 +33,7 @@ def detalhe_artigo2(request, id):
 
 def detalhe_artigo3(request, id):
     artigo_terceario = ArtigoTerceiro.objects.get(id=id)
-    return render(request, 'home/detalhe_artigo3.html', {'artigo_terceiro':artigo_terceario})
+    return render(request, 'home/detalhe_artigo3.html', {'artigo_terceario':artigo_terceario})
 
 
 def add_content_primal(request):
@@ -38,7 +42,7 @@ def add_content_primal(request):
         texto = request.POST['texto']
         article = ArtigoPrincipal(titulo=titulo, texto=texto)
         article.save()
-        return redirect('home/init')
+        return redirect('/home/')
     return render(request, 'home/add_content_primal.html')
 
 
@@ -48,7 +52,7 @@ def add_content_sec(request):
         texto = request.POST['texto']
         article2 = ArtigoSecundario(titulo=titulo, texto=texto)
         article2.save()
-        return redirect('home/init')
+        return redirect('/home/')
     return render(request, 'home/add_content_sec.html')
 
 
@@ -58,5 +62,5 @@ def add_content_terc(request):
         texto = request.POST['texto']
         article3 = ArtigoTerceiro(titulo=titulo, texto=texto)
         article3.save()
-        return redirect('home/init')
+        return redirect('/home/')
     return render(request, 'home/add_content_terc.html')

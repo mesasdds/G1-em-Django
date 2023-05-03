@@ -23,8 +23,8 @@
 
     <h1>Artigos Tercearios</h1>
     <ul>
-        {% for artigo in artigo_terceario %}
-            <li><a href="{% url 'detalhe_artigo3' id=artigo.id}">{{artigo.titulo}}</a></li>
+        {% for artigo in artigos_terceiros %}
+            <li><a href="{% url 'detalhe_artigo3' id=artigo.id %}">{{artigo.titulo}}</a></li>
         {% endfor %}
     </ul>
 </body>

@@ -1,12 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Olá</h1>
-</body>
-</html>
+{% extends 'base2.html' %}
+{% block title %}Inicio{% endblock %}
+
+        {% block container-box %}
+        <div class="container-box">
+            <article class="artigo-principal">
+                <li class="article-spantitulo"><span class="artigo-principal-spantitulo">Ataque aos 3 Poderes</span></li>
+                <li class="blankspace-artigo-principal"></li>
+                <li class="article-principal-titulo"><span class="titulo-artigo-principal"><h1>{{artigoP.titulo}}</h1></span></li>
+                <li class="genereic-article-principal"><span>{{artigoP1.titulo}}</span></li>
+                <li class="genereic-article-principal"><span>{{artigoP2.titulo}}</span></li>
+                <li class="genereic-article-principal"><span>{{artigoP3.titulo}}</span></li>
+            </article>
+            <article class="two_aricle1">
+                <span class="two_title1"><h2>{{artigoS.titulo}}{{artigoS.texto}}</h2></span>
+            </article>
+            <!--   -->
+
+            <article class="two_article2">
+                <span class="two_title2"><h2>{{artigoT.titulo}}{{artigoT.texto}}</h2></span>
+            </article>
+        </div>
+        {% endblock %}
