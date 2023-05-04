@@ -49,33 +49,7 @@
 
     <main>
         {% block container-box %}{% endblock %}
-        <div class="container-news">
-            <article class="generico1" id="not1">
-                <img src="{% static 'images/bolsonaronot.webp' %}" alt="">
-                <span class="dep-titulono1">2 horas de depoimento</span>
-                <span class="titulo-span-not1"><p>Bolsonaro diz à PF que postou vídeo <br> 'sem querer' sob efeito de morfina</p></span>
-                <span class="subtitle-span-not1"><p>Inquérito apura se ex-presidente incentivou ataques ao <br> divulgar mentiras sobre a eleição.</p></span>
-                <span class="horario-span-not1"><p>horario - Em Política</p></span>
-            </article>
-
-            <article class="generico1" id="not2">
-                <img src="{% static 'images/lulanot.webp' %}" alt="">
-                <span class="dep-titulono2">Rússia x Ucrânia</span>
-                <span class="titulo-span-not2"><p>'Não cabe a mim decidir de quem é <br> a Crimeia', diz Lula na Espanha</p></span>
-                <span class="subtitle-span-not2"><p>Janja vai coordenar rede de combate à desigualdade</p></span>
-                <span class="horario-span-not1">horario - Em Política</span>
-
-            </article>
-
-            <article class="generico1" id="not3">
-                <img src="{% static 'images/pedonot.webp' %}" alt="">
-                <span class="dep-titulono3">Paraná</span>
-                <span class="titulo-span-not3"><p>Prefeito que se casou com garota de <br> 16 anos já foi preso por tráfico</p></span>
-                <span class="subtitle-span-not3"><p>Hissam Dehaini exonera sogra e tia da esposa</p></span>
-                <span class="horario-span-not1">horario - Em Política</span>
-            </article>
-        </div>
-
+        {% block container-generic %}{% endblock %}
         <div class="container-recommends">
             <div  class="titlerecommend">
                 <h2>Viu isso aqui?</h2>

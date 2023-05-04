@@ -9,22 +9,22 @@
 <body>
     <h1>Artigos Principais</h1>
     <ul>
-        {% for artigo in artigos_principais %}
-            <li><a href="{% url 'detalhe_artigo' id=artigo.id %}">{{artigo.titulo}}</a></li>
+        {% for artigoprincipal in artigos_principais %}
+            <li><a href="{% url 'detalhe_artigo' id=artigoprincipal.id %}">{{artigoprincipal.titulo}}</a></li>
         {% endfor %}
     </ul>
 
     <h1>Artigos Secundários</h1>
     <ul>
-        {% for artigo in artigos_secundarios %}
-            <li><a href="{% url 'detalhe_artigo2' id=artigo.id %}">{{ artigo.titulo}}</a></li>
+        {% for artigosecundario in artigos_secundarios %}
+            <li><a href="{% url 'detalhe_artigo2' id=artigosecundario.id %}">{{ artigosecundario.titulo}}</a></li>
         {% endfor %}
     </ul>
 
     <h1>Artigos Tercearios</h1>
     <ul>
-        {% for artigo in artigos_terceiros %}
-            <li><a href="{% url 'detalhe_artigo3' id=artigo.id %}">{{artigo.titulo}}</a></li>
+        {% for artigoterceiro in artigos_terceiros %}
+            <li><a href="{% url 'detalhe_artigo3' id=artigoterceiro.id %}">{{artigoterceiro.titulo}}</a></li>
         {% endfor %}
     </ul>
 </body>

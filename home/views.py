@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import ArtigoPrincipal, ArtigoSecundario, ArtigoTerceiro
+from .models import ArtigoPrincipal, ArtigoSecundario, ArtigoTerceiro, ArtigosGenericos
 
 # Create your views here.
 
@@ -9,10 +9,11 @@ def initial(request):
     return render(request, 'home/init.html')
 
 def HomeView(request):
-    artigoP = ArtigoPrincipal.objects.first()
-    artigoS = ArtigoSecundario.objects.first()
-    artigoT = ArtigoTerceiro.objects.first()
-    return render(request, 'home/homeview.html', {'artigoS':artigoS, 'artigoP':artigoP, 'artigoT':artigoT})
+    artigoP = ArtigoPrincipal.objects.latest('create_at')
+    artigoS = ArtigoSecundario.objects.latest('create_at')
+    artigoT = ArtigoTerceiro.objects.latest('create_at')
+    artigoGe = ArtigosGenericos.objects.order_by('-create_at').all()
+    return render(request, 'home/homeview.html', {'artigoS':artigoS, 'artigoP':artigoP, 'artigoT':artigoT, 'artigoGe':artigoGe})
 
 def Index(request):
     return render(request, 'home/index.html')
@@ -20,6 +21,7 @@ def Index(request):
 def lista_artigos(request):
     artigos_principais = ArtigoPrincipal.objects.all()
     artigos_secundarios = ArtigoSecundario.objects.all()
+
     artigos_terceiros = ArtigoTerceiro.objects.all()
     return render(request, 'home/lista_artigos.html', {'artigos_principais':artigos_principais, 'artigos_secundarios':artigos_secundarios, 'artigos_terceiros':artigos_terceiros} )
 
@@ -64,3 +66,5 @@ def add_content_terc(request):
         article3.save()
         return redirect('/home/')
     return render(request, 'home/add_content_terc.html')
+
+

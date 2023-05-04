@@ -6,18 +6,32 @@
             <article class="artigo-principal">
                 <li class="article-spantitulo"><span class="artigo-principal-spantitulo">Ataque aos 3 Poderes</span></li>
                 <li class="blankspace-artigo-principal"></li>
-                <li class="article-principal-titulo"><span class="titulo-artigo-principal"><h1>{{artigoP.titulo}}</h1></span></li>
+                <li class="article-principal-titulo"><span class="titulo-artigo-principal"><h1><a href="#">{{artigoP.titulo}}</a></h1></span></li>
                 <li class="genereic-article-principal"><span>{{artigoP1.titulo}}</span></li>
                 <li class="genereic-article-principal"><span>{{artigoP2.titulo}}</span></li>
                 <li class="genereic-article-principal"><span>{{artigoP3.titulo}}</span></li>
             </article>
             <article class="two_aricle1">
-                <span class="two_title1"><h2>{{artigoS.titulo}}{{artigoS.texto}}</h2></span>
+                <span class="two_title1"><h2><a href="#">{{artigoS.titulo}}</a>{{artigoS.texto}}</h2></span>
             </article>
             <!--   -->
 
             <article class="two_article2">
-                <span class="two_title2"><h2>{{artigoT.titulo}}{{artigoT.texto}}</h2></span>
+                <span class="two_title2"><h2><a href="#">{{artigoT.titulo}}</a>{{artigoT.texto}}</h2></span>
             </article>
+        </div>
+        {% endblock %}
+
+        {% block container-generic %}
+        <div class="container-news">
+            {% for artigoGes in artigoGe %}
+            <article class="generico1" id="not1">
+                <img src="{{ artigoGes.imagem.url }}" alt="artigo imagem">
+                <span class="dep-titulono1">2 horas de depoimento</span>
+                <span class="titulo-span-not1"><p>{{artigoGes.titulo}}</span>
+                <span class="subtitle-span-not1"><p>{{artigoGes.texto}}</p></span>
+                <span class="horario-span-not1"><p>horario - Em Política</p></span>
+            </article>
+            {% endfor %}
         </div>
         {% endblock %}
