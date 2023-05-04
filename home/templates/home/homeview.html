@@ -4,21 +4,24 @@
         {% block container-box %}
         <div class="container-box">
             <article class="artigo-principal">
-                <li class="article-spantitulo"><span class="artigo-principal-spantitulo">Ataque aos 3 Poderes</span></li>
                 <li class="blankspace-artigo-principal"></li>
                 <li class="article-principal-titulo"><span class="titulo-artigo-principal"><h1><a href="#">{{artigoP.titulo}}</a></h1></span></li>
-                <li class="genereic-article-principal"><span>{{artigoP1.titulo}}</span></li>
-                <li class="genereic-article-principal"><span>{{artigoP2.titulo}}</span></li>
-                <li class="genereic-article-principal"><span>{{artigoP3.titulo}}</span></li>
+                <li class="genereic-article-principal"><span>{{artigoP.texto}}</span></li>
             </article>
-            <article class="two_aricle1">
-                <span class="two_title1"><h2><a href="#">{{artigoS.titulo}}</a>{{artigoS.texto}}</h2></span>
-            </article>
+            <div class="container_two_article1">
+                <article class="two_aricle1">
+                    <span><h2 class="two_title2"><a href="#">{{artigoS.titulo}}</a></h2></span>
+                    <img class="imagem_two_title1" src="{{ artigoS.imagem.url }}" alt="artigo imagem">
+                </article>
+            </div>
             <!--   -->
 
-            <article class="two_article2">
-                <span class="two_title2"><h2><a href="#">{{artigoT.titulo}}</a>{{artigoT.texto}}</h2></span>
-            </article>
+            <div class="container_two_article2">
+                <article class="two_article2">
+                    <span><h2 class="two_title2"><a href="#">{{artigoT.titulo}}</a></h2></span>
+                    <img class="imagem_two_title2" src="{{ artigoT.imagem.url }}" alt="artigo imagem">
+                </article>
+            </div>
         </div>
         {% endblock %}
 
@@ -27,10 +30,8 @@
             {% for artigoGes in artigoGe %}
             <article class="generico1" id="not1">
                 <img src="{{ artigoGes.imagem.url }}" alt="artigo imagem">
-                <span class="dep-titulono1">2 horas de depoimento</span>
-                <span class="titulo-span-not1"><p>{{artigoGes.titulo}}</span>
-                <span class="subtitle-span-not1"><p>{{artigoGes.texto}}</p></span>
-                <span class="horario-span-not1"><p>horario - Em Política</p></span>
+                <span ><p class="titulo-generico">{{artigoGes.titulo}}</span>
+                <span ><p class="subtitulo-generico">{{artigoGes.texto}}</p></span>
             </article>
             {% endfor %}
         </div>
@@ -43,13 +44,23 @@
                 <h2>Viu isso aqui?</h2>
             </div>
             {% for artigoRes in artigoRe %}
-            <article id="mini_rec1" class="mini_recommend">
-                <img src="{{ artigoRes.imagem.url }}" alt="artigo imagem">
-                <span class="span1-minirec1" ><p>{{artigoRes.titulo}}</p></span>
+            <article class="mini_recommend">
+                <img class="foto_recomend" src="{{ artigoRes.imagem.url }}" alt="artigo imagem">
+                <p><a class="minirecommend_title" href="#">{{artigoRes.titulo}}</a></p>
             </article>
             {% endfor %}
             <div class="more_recommend">
                 <p>Mais conteúdos recomendados </p>
             </div>
         </div>
+        {% endblock %}
+
+        {% block container-clima %}
+    <div class="container-clima">
+        <div class="titleclima"><h2>Previsão do Tempo</h2></div>
+        <div class="contclima">
+        </div>
+        <div class="moreclima"><p>Veja a previsão do Climatempo</p></div>
+
+    </div>
         {% endblock %}

@@ -47,19 +47,12 @@
         </div>
     </header>
 
-    <main>
+    <main class="main_relative">
         {% block container-box %}{% endblock %}
         {% block container-generic %}{% endblock %}
         {% block container-recommends %}{% endblock %}
-    
-        <div class="container-clima">
-            <div class="titleclima"><h2>Previsão do Tempo</h2></div>
-            <div class="contclima">
-                <img src="{% static 'images/temp.jpeg' %}" alt="">
-            </div>
-            <div class="moreclima"><p>Veja a previsão do Climatempo</p></div>
-
-        </div>
+        {% block container-clima %}{% endblock %}
+        
     </main>
 
     <script src="{% static 'js/scripts.js' %}"></script>
