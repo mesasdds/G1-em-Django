@@ -35,3 +35,21 @@
             {% endfor %}
         </div>
         {% endblock %}
+        
+
+        {% block container-recommends %}
+        <div class="container-recommends">
+            <div  class="titlerecommend">
+                <h2>Viu isso aqui?</h2>
+            </div>
+            {% for artigoRes in artigoRe %}
+            <article id="mini_rec1" class="mini_recommend">
+                <img src="{{ artigoRes.imagem.url }}" alt="artigo imagem">
+                <span class="span1-minirec1" ><p>{{artigoRes.titulo}}</p></span>
+            </article>
+            {% endfor %}
+            <div class="more_recommend">
+                <p>Mais conteúdos recomendados </p>
+            </div>
+        </div>
+        {% endblock %}

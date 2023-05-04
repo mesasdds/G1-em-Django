@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import ArtigoPrincipal, ArtigoSecundario, ArtigoTerceiro, ArtigosGenericos
+from .models import ArtigoPrincipal, ArtigoSecundario, ArtigoTerceiro, ArtigosGenericos, ArtigosRecommends
 
 # Create your views here.
 
@@ -13,7 +13,8 @@ def HomeView(request):
     artigoS = ArtigoSecundario.objects.latest('create_at')
     artigoT = ArtigoTerceiro.objects.latest('create_at')
     artigoGe = ArtigosGenericos.objects.order_by('-create_at').all()
-    return render(request, 'home/homeview.html', {'artigoS':artigoS, 'artigoP':artigoP, 'artigoT':artigoT, 'artigoGe':artigoGe})
+    artigoRe = ArtigosRecommends.objects.order_by('-create_at').all()
+    return render(request, 'home/homeview.html', {'artigoS':artigoS, 'artigoP':artigoP, 'artigoT':artigoT, 'artigoGe':artigoGe, 'artigoRe':artigoRe})
 
 def Index(request):
     return render(request, 'home/index.html')
