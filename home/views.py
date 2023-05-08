@@ -53,7 +53,8 @@ def add_content_sec(request):
     if request.method == 'POST':
         titulo = request.POST['titulo']
         texto = request.POST['texto']
-        article2 = ArtigoSecundario(titulo=titulo, texto=texto)
+        imagem = request.FILES['imagem']
+        article2 = ArtigoSecundario(titulo=titulo, texto=texto, imagem=imagem)
         article2.save()
         return redirect('/home/')
     return render(request, 'home/add_content_sec.html')
@@ -63,7 +64,8 @@ def add_content_terc(request):
     if request.method == 'POST':
         titulo = request.POST['titulo']
         texto = request.POST['texto']
-        article3 = ArtigoTerceiro(titulo=titulo, texto=texto)
+        imagem = request.FILES['imagem']
+        article3 = ArtigoTerceiro(titulo=titulo, texto=texto, imagem=imagem)
         article3.save()
         return redirect('/home/')
     return render(request, 'home/add_content_terc.html')
