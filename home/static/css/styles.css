@@ -127,7 +127,7 @@ font-size:smaller;
   width: 180px;
   background-color: rgba(41, 31, 31, 0.219);
   border: none;
-  left: 85%;
+  left: 880px;
   top: 50pt;
 }
 
@@ -341,7 +341,7 @@ font-size:large;
 width: 100%;
 position: relative;
 height: 110pt;
-padding: 25pt;
+padding: 5pt;
 padding-top: 10pt;
 border-bottom: solid 1px rgba(0, 0, 0, 0.089);
 }
@@ -350,6 +350,7 @@ border-bottom: solid 1px rgba(0, 0, 0, 0.089);
   word-wrap: break-word;
   position: absolute;
   height: 100px;
+  font-size: medium;
   width: 50%;
   color:#a6130a ; 
   font-family:inherit;
@@ -361,8 +362,11 @@ border-bottom: solid 1px rgba(0, 0, 0, 0.089);
 
 
 .foto_recomend{
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
   position: absolute;
-  left: 65%;
+  left: 48%;
   top: 20%;
 }
 

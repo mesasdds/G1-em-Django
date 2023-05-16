@@ -5,21 +5,20 @@
         <div class="container-box">
             <article class="artigo-principal">
                 <li class="blankspace-artigo-principal"></li>
-                <li class="article-principal-titulo"><span class="titulo-artigo-principal"><h1><a href="#">{{artigoP.titulo}}</a></h1></span></li>
-                <li class="genereic-article-principal"><span>{{artigoP.texto}}</span></li>
+                <li class="article-principal-titulo"><span class="titulo-artigo-principal"><h1><a href="{% url 'detalhe_artigo'  %}">{{artigoP.0.titulo}}</a></h1></span></li>
+                <li class="genereic-article-principal"><a href="{% url 'detalhe_artigo'  %}"><span>{{artigoP.0.texto}}</span></a></li>
             </article>
             <div class="container_two_article1">
                 <article class="two_aricle1">
-                    <span><h2 class="two_title2"><a href="#">{{artigoS.titulo}}</a></h2></span>
-                    <img class="imagem_two_title1" src="{{ artigoS.imagem.url }}" alt="artigo imagem">
+                    <span><h2 class="two_title2"><a href="{% url 'detalhe_artigo2'  %}">{{artigoS.0.titulo}}</a></h2></span>
+                    <a href="{% url 'detalhe_artigo2'  %}"><img class="imagem_two_title1" src="{{artigoS.0.imagem}}" alt="artigo imagem"></a>
                 </article>
             </div>
             <!--   -->
-
             <div class="container_two_article2">
                 <article class="two_article2">
-                    <span><h2 class="two_title2"><a href="#">{{artigoT.titulo}}</a></h2></span>
-                    <img class="imagem_two_title2" src="{{ artigoT.imagem.url }}" alt="artigo imagem">
+                    <span><h2 class="two_title2"><a href="{% url 'detalhe_artigo3'  %}">{{artigoT.0.titulo}}</a></h2></span>
+                    <a href="{% url 'detalhe_artigo3'  %}"><img class="imagem_two_title2" src="{{ artigoT.0.imagem}}" alt="artigo imagem"></a>
                 </article>
             </div>
         </div>
@@ -29,9 +28,9 @@
         <div class="container-news">
             {% for artigoGes in artigoGe %}
             <article class="generico1" id="not1">
-                <img src="{{ artigoGes.imagem.url }}" alt="artigo imagem">
-                <span ><p class="titulo-generico">{{artigoGes.titulo}}</span>
-                <span ><p class="subtitulo-generico">{{artigoGes.texto}}</p></span>
+                <a href="{% url 'detalhe_artigo4'  %}"><img src="{{ artigoGes.imagem }}" alt="artigo imagem"></a>
+                <span ><a href="{% url 'detalhe_artigo4'  %}"><p class="titulo-generico">{{artigoGes.titulo}}</p></a></span>
+                <span ><a href="{% url 'detalhe_artigo4'  %}"><p class="subtitulo-generico">{{artigoGes.texto}}</p></a></span>
             </article>
             {% endfor %}
         </div>
@@ -43,10 +42,10 @@
             <div  class="titlerecommend">
                 <h2>Viu isso aqui?</h2>
             </div>
-            {% for artigoRes in artigoRe %}
+            {% for artigorecf in artigoRec %}
             <article class="mini_recommend">
-                <img class="foto_recomend" src="{{ artigoRes.imagem.url }}" alt="artigo imagem">
-                <p><a class="minirecommend_title" href="#">{{artigoRes.titulo}}</a></p>
+                <a href="{% url 'detalhe_artigo5'%}"><img class="foto_recomend" src="{{ artigorecf.imagem }}" alt="artigo imagem"></a>
+                <p><a class="minirecommend_title" href="{% url 'detalhe_artigo5' %}">{{artigorecf.titulo}}</a></p>
             </article>
             {% endfor %}
             <div class="more_recommend">

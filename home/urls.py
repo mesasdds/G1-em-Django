@@ -6,13 +6,11 @@ from . import views
 
 urlpatterns = [
     path('', views.HomeView, name='homeview'),
-    path('add_content_primal/', views.add_content_primal, name = 'add_content_primal' ),
-    path('add_content_sec/', views.add_content_sec, name= 'add_content_sec'),
-    path('add_content_terc/', views.add_content_terc, name='add_content_terc'),
-    path('artigo/<int:id>/', views.detalhe_artigo, name='detalhe_artigo'),
-    path('artigo2/<int:id>/', views.detalhe_artigo2, name='detalhe_artigo2'),
-    path('artigo3/<int:id>/', views.detalhe_artigo3, name='detalhe_artigo3'),
-    path('admin-view', views.lista_artigos, name="lista_artigos"),
     path('home/', views.HomeView, name="homeview"),
-    path('index/', views.Index, name="index"),
+    path('artigo_principal', views.detalhe_artigo, name='detalhe_artigo'),
+    path('artigo_secundario', views.detalhe_artigo2, name='detalhe_artigo2'),
+    path('artigo_terceiro', views.detalhe_artigo3, name='detalhe_artigo3'),
+    path('artigo_generico', views.detalhe_artigogenerico, name='detalhe_artigo4'),
+    path('artigo_recomendado)', views.detalhe_recommends, name='detalhe_artigo5'),
+    path('index/', views.minha_view, name='minha_view'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

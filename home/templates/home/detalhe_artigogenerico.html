@@ -1,0 +1,9 @@
+{% extends 'base3.html' %}
+{% block title %}{{artigo_gen.titulo}}{% endblock %}
+
+{% block container-box %}
+    <h1>{{artigoGe.0.titulo}}</h1>
+    <p>{{artigoGe.0.texto}}</p>
+    <img src="{{artigoGe.0.imagem}}" alt="{{artigo_gen.titulo}}">
+{% endblock %}
+
