@@ -1,0 +1,78 @@
+{% extends 'base2.html' %}
+
+  {% block container-box %}
+  <h1>Resultados da busca por "{{ query }}"</h1>
+  
+  <h2 style="display: fixed; top: 11;">Artigos Principais</h2>
+
+  <ul>
+    {% for artigo in principal_results %}
+      <li>
+        <h3>{{ artigo.titulo }}</h3>
+        <p>{{ artigo.texto|truncatewords:30 }}</p>
+      </li>
+    {% empty %}
+      <li>Nenhum resultado encontrado</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Artigos Secundários</h2>
+  <ul>
+    {% for artigo in secundario_results %}
+      <li>
+        <h3>{{ artigo.titulo }}</h3>
+        <p>{{ artigo.texto|truncatewords:30 }}</p>
+        <img src="{{artigo.imagem.url}}" alt="{{artigo.titulo}}">
+      </li>
+    {% empty %}
+      <li>Nenhum resultado encontrado</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Artigos Terceários</h2>
+  <ul>
+    {% for artigo in terceiro_results %}
+      <li>
+        <h3>{{ artigo.titulo }}</h3>
+        <p>{{ artigo.texto|truncatewords:30 }}</p>
+        <img src="{{artigo.imagem.url}}" alt="{{artigo.titulo}}">
+      </li>
+    {% empty %}
+      <li>Nenhum resultado encontrado</li>
+    {% endfor %}
+  </ul>
+  {% endblock %}
+
+  {% block container-generic %}
+
+  <h2>Artigos Genéricos</h2>
+  <ul>
+    {% for artigo in generico_results %}
+      <li>
+        <h3>{{ artigo.titulo }}</h3>
+        <p>{{ artigo.texto|truncatewords:30 }}</p>
+        <img src="{{artigo.imagem.url}}" alt="{{artigo.titulo}}">
+      </li>
+    {% empty %}
+      <li>Nenhum resultado encontrado</li>
+    {% endfor %}
+  </ul>
+  {% endblock %}
+
+
+
+  {% block container-recommends %}
+  <h2>Artigos Recommends</h2>
+  <ul>
+    {% for artigo in recommends_results %}
+      <li>
+        <h3>{{ artigo.titulo }}</h3>
+        <p>{{ artigo.texto|truncatewords:30 }}</p>
+        <img src="{{artigo.imagem.url}}" alt="{{artigo.titulo}}">
+      </li>
+    {% empty %}
+      <li>Nenhum resultado encontrado</li>
+    {% endfor %}
+  </ul>
+  {% endblock %}
+

@@ -1,9 +1,16 @@
+# admin.py
 from django.contrib import admin
-# Register your models here.
-from .models import ArtigoPrincipal, ArtigoSecundario, ArtigoTerceiro, ArtigosGenericos, ArtigosRecommends
+from .models import ArtigoPrincipal, ArtigoSecundario, ArtigoTerceiro, ArtigosGenericos, ArtigosRecommends, Category, Tag
 
-admin.site.register(ArtigoPrincipal)
-admin.site.register(ArtigoSecundario)
-admin.site.register(ArtigoTerceiro)
-admin.site.register(ArtigosGenericos)
-admin.site.register(ArtigosRecommends)
+class ArtigoAdmin(admin.ModelAdmin):
+    list_display = ('titulo', 'create_at', 'update_at')
+    search_fields = ('titulo', 'texto')
+    list_filter = ('categories', 'tags')
+
+admin.site.register(ArtigoPrincipal, ArtigoAdmin)
+admin.site.register(ArtigoSecundario, ArtigoAdmin)
+admin.site.register(ArtigoTerceiro, ArtigoAdmin)
+admin.site.register(ArtigosGenericos, ArtigoAdmin)
+admin.site.register(ArtigosRecommends, ArtigoAdmin)
+admin.site.register(Category)
+admin.site.register(Tag)

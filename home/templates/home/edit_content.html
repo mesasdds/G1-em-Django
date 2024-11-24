@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Conteúdo</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar {{ article_type }}</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <!-- Exibir a imagem existente se ela estiver presente -->
+            {% if form.instance.imagem %}
+                <div class="image-preview">
+                    <label for="imagem">Imagem Atual:</label>
+                    <img src="{{ form.instance.imagem.url }}" alt="Imagem Atual" style="max-width: 200px; max-height: 200px;">
+                </div>
+            {% endif %}
+
+            <input type="submit" value="Salvar alterações">
+        </form>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Artigos</title>
+</head>
+<body>
+    <h1>Lista de Artigos</h1>
+    <h2>Artigos Principais</h2>
+    <ul>
+        {% for artigo in artigos_principais %}
+            <li>
+                <a href="{% url 'detalhe_artigo' artigo.id %}">{{ artigo.titulo }}</a>
+                - <a href="{% url 'edit_content' artigo.id 'principal' %}">Editar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Artigos Secundários</h2>
+    <ul>
+        {% for artigo in artigos_secundarios %}
+            <li>
+                <a href="{% url 'detalhe_artigo2' artigo.id %}">{{ artigo.titulo }}</a>
+                - <a href="{% url 'edit_content' artigo.id 'secundario' %}">Editar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Artigos Terceários</h2>
+    <ul>
+        {% for artigo in artigos_tercearios %}
+            <li>
+                <a href="{% url 'detalhe_artigo3' artigo.id %}">{{ artigo.titulo }}</a>
+                - <a href="{% url 'edit_content' artigo.id 'terceario' %}">Editar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Artigos Genéricos</h2>
+    <ul>
+        {% for artigo in artigos_genericos %}
+            <li>
+                <a href="{% url 'detalhe_artigoGe' artigo.id %}">{{ artigo.titulo }}</a>
+                - <a href="{% url 'edit_content' artigo.id 'generico' %}">Editar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Artigos Recomendações</h2>
+    <ul>
+        {% for artigo in artigos_recommends %}
+            <li>
+                <a href="{% url 'detalhe_artigoRe' artigo.id %}">{{ artigo.titulo }}</a>
+                - <a href="{% url 'edit_content' artigo.id 'recommends' %}">Editar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Adicionar Novo Artigo</h2>
+    <ul>
+        <li><a href="{% url 'add_content' 'principal' %}">Adicionar Artigo Principal</a></li>
+        <li><a href="{% url 'add_content' 'secundario' %}">Adicionar Artigo Secundário</a></li>
+        <li><a href="{% url 'add_content' 'terceario' %}">Adicionar Artigo Terceário</a></li>
+        <li><a href="{% url 'add_content' 'generico' %}">Adicionar Artigo Genérico</a></li>
+        <li><a href="{% url 'add_content' 'recommends' %}">Adicionar Artigo Recomendações</a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<h2>Resultados da Filtragem por {{ filter }}</h2>
+{% for result in results %}
+    <h3><a href="{% url 'detalhe_artigo' result.id %}">{{ result.title }}</a></h3>
+    <p>{{ result.content|truncatewords:30 }}</p>
+{% endfor %}
