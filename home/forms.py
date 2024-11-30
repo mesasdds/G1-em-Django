@@ -1,8 +1,13 @@
-# forms.py
 from django import forms
-from .models import ArtigoPrincipal, ArtigoSecundario, ArtigoTerceiro, ArtigosGenericos, ArtigosRecommends
+from .models import Artigo
 
 class ArtigoForm(forms.ModelForm):
     class Meta:
-        model = ArtigoPrincipal  # Use a classe base ArtigoPrincipal como exemplo
-        fields = ['titulo', 'texto', 'imagem', 'categories', 'tags']
+        model = Artigo
+        fields = ['titulo', 'texto', 'imagem', 'categories', 'tags', 'tipo']
+
+    # Opcional: Personalizar rótulos ou widgets
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['tipo'].widget = forms.Select(choices=Artigo.TIPO_CHOICES)
+        self.fields['tipo'].label = "Tipo de Artigo"

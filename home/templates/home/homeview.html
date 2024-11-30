@@ -3,41 +3,51 @@
 
 {% block container-box %}
 <div class="container-box">
-    <article class="artigo-principal">
-        <li class="blankspace-artigo-principal"></li>
-        <li class="article-principal-titulo">
-            <span class="titulo-artigo-principal">
-                <h1><a href="{% url 'detalhe_artigo' article_type='principal' id=artigoP.id %}">{{ artigoP.titulo }}</a></h1>
-            </span>
-        </li>
-        <li class="genereic-article-principal"><span>{{ artigoP.texto }}</span></li>
-    </article>
-    <div class="container_two_article1">
-        <article class="two_aricle1">
-            <span>
-                <h2 class="two_title2"><a href="{% url 'detalhe_artigo' article_type='secundario' id=artigoS.id %}">{{ artigoS.titulo }}</a></h2>
-            </span>
-            <img class="imagem_two_title1" src="{{ artigoS.imagem.url }}" alt="artigo imagem">
+    {% if artigoP %}
+        <article class="artigo-principal">
+            <h1>
+                <a href="{% url 'detalhe_artigo' id=artigoP.id %}">{{ artigoP.titulo }}</a>
+            </h1>
+            <p>{{ artigoP.texto }}</p>
         </article>
-    </div>
-    <!--   -->
-
-    <div class="container_two_article2">
-        <article class="two_article2">
-            <span>
-                <h2 class="two_title2"><a href="{% url 'detalhe_artigo' article_type='terceario' id=artigoT.id %}">{{ artigoT.titulo }}</a></h2>
-            </span>
-            <img class="imagem_two_title2" src="{{ artigoT.imagem.url }}" alt="artigo imagem">
-        </article>
-    </div>
+    {% else %}
+        <p>Nenhum artigo principal disponível.</p>
+    {% endif %}
 </div>
+
+<div class="container_two_article1">
+    {% if artigoS %}
+        <article class="two_article1" style="background-image: url('{{ artigoS.imagem.url }}');">
+            <h2>
+                <a href="{% url 'detalhe_artigo' id=artigoS.id %}">{{ artigoS.titulo }}</a>
+            </h2>
+        </article>
+    {% else %}
+        <p>Nenhum artigo secundário disponível.</p>
+    {% endif %}
+</div>
+
+
+<div class="container_two_article2">
+    {% if artigoT %}
+        <article class="two_article2" style="background-image: url('{{ artigoT.imagem.url }}');">
+            <h2>
+                <a href="{% url 'detalhe_artigo' id=artigoT.id %}">{{ artigoT.titulo }}</a>
+            </h2>
+        </article>
+    {% else %}
+        <p>Nenhum artigo terciário disponível.</p>
+    {% endif %}
+</div>
+
+
 {% endblock %}
 
 {% block container-generic %}
 <div class="container-news">
     {% for artigoGes in artigoGe %}
     <article class="generico1" id="not1">
-        <a href="{% url 'detalhe_artigo' article_type='generico' id=artigoGes.id %}"><img src="{{ artigoGes.imagem.url }}" alt="artigo imagem"></a>
+        <a href="{% url 'detalhe_artigo' id=artigoGes.id %}"><img src="{{ artigoGes.imagem.url }}" alt="artigo imagem"></a>
         <span>
             <p class="titulo-generico">{{ artigoGes.titulo }}</p>
         </span>
@@ -57,7 +67,7 @@
     {% for artigoRes in artigoRe %}
     <article class="mini_recommend">
         <img class="foto_recomend" src="{{ artigoRes.imagem.url }}" alt="artigo imagem">
-        <p><a class="minirecommend_title" href="{% url 'detalhe_artigo' article_type='recommends' id=artigoRes.id %}">{{ artigoRes.titulo }}</a></p>
+        <p><a class="minirecommend_title" href="{% url 'detalhe_artigo' id=artigoRes.id %}">{{ artigoRes.titulo }}</a></p>
     </article>
     {% endfor %}
     <div class="more_recommend">
