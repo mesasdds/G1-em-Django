@@ -8,7 +8,9 @@
             <h1>
                 <a href="{% url 'detalhe_artigo' id=artigoP.id %}">{{ artigoP.titulo }}</a>
             </h1>
-            <p>{{ artigoP.texto }}</p>
+            <p>
+                <a href="{% url 'detalhe_artigo' id=artigoP.id %}">{{ artigoP.texto }}</a>
+            </p>
         </article>
     {% else %}
         <p>Nenhum artigo principal disponível.</p>

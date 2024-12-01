@@ -34,19 +34,36 @@
         </nav>
     
         <div class="area-principal">
-          <div class="menu-icon">&#9776; MENU</div>
+          <div class="menu-lateral">
+            <button class="menu-icon">&#9776; MENU</button>
+            <button class="close-icon" style="display: none;"></button> <!-- Ícone de fechar -->
+            <nav class="menu-drop">
+                <ul>
+                    <li><a href="#">Colunistas</a></li>
+                    <li><a href="#">E-esports</a></li>
+                    <li><a href="#">Top 10</a></li>
+                    <li><a href="#">Esports</a></li>
+                    <li><a href="#">Regiões</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                    <li><a href="#">Colunas</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Podcasts</a></li>
+                    <li><a href="#">Cursos</a></li>
+                    <li><a href="#">Vídeos</a></li>
+                    <li><a href="#">Patrocinados</a></li>
+                    <hr>
+                    <li><a href="#">Princípios Editoriais</a></li>
+                    <li><a href="#">Sobre o SaltoDIA</a></li>
+                    <li><a href="#">App SaltoDIA</a></li>
+                    <li><a href="#">Equipe</a></li>
+                    <li><a href="#">Entre em Contato</a></li>
+                </ul>
+            </nav>
+        </div>
           <img class="portal_icon" src="{% static 'images/portal_salto_dia_logo_new-removebg-preview.png' %}" alt="">
           <form method="get" action="{% url 'search_results' %}" class="search-form">
             <input class="form-control me-2" type="search" name="q" placeholder="Buscar notícias..." aria-label="Search">
           </form>
-          <nav class="menu">
-              <div class="close-icon">&#9776;</div>
-              <ul>
-                  <li><a href="{% url 'homeview' %}">Início</a></li>
-                  <li><a href="#">Sobre</a></li>
-                  <li><a href="#">Contato</a></li>
-              </ul>
-          </nav>
         </div>
       
     </header>

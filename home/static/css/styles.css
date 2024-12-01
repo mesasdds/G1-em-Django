@@ -9,14 +9,28 @@ header{
   height: 125px;
 }
 
-.navbar{
+.navbar {
   height: 45px;
+  position: fixed;
+  top: 0; /* Fixa no topo da página */
+  width: 100%;
+  z-index: 1000; /* Garantir que esteja acima do conteúdo */
+  background-color: #f8f9fa; /* Fundo para evitar transparência */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona leve sombra para separação visual */
 }
 
-.area-principal{
-  background-color: #8332a3;;
+.area-principal {
+  position: fixed;
+  top: 45px; /* Posiciona logo abaixo da .navbar */
   width: 100%;
-  height: 80px;
+  height: 80px; /* Altura definida */
+  z-index: 999; /* Um nível abaixo da navbar */
+  background-color: #8332a3; /* Cor de fundo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para separação visual */
+}
+
+.main_relative {
+  margin-top: 125px; /* Compensa a altura combinada de .navbar (45px) e .area-principal (80px) */
 }
 
 #saltoicon img{
@@ -122,7 +136,7 @@ font-size:smaller;
 .portal_icon{
   position: absolute;
   left: 47%;
-  top: 40pt;
+  top: 5pt;
   width: 80px;
   height: 60px;
 }
@@ -133,7 +147,7 @@ font-size:smaller;
   background-color: rgba(41, 31, 31, 0.219);
   border: none;
   left: 880px;
-  top: 50pt;
+  top: 15pt;
 }
 
 .form-control::placeholder{
@@ -143,12 +157,11 @@ font-size:smaller;
 /* CONTAINER DE TODO ARTIGO PRINCIPAL */
 
 .container-box{
-  width: 90%;
+  width: 43%;
+  top: 127pt;
   height: 440pt;
   margin-left: 5%;
-  margin-top: 3%;
-  background-color: #ffffff;;
-  position: relative;
+  position: absolute;
 }
 
 
@@ -158,16 +171,28 @@ font-size:smaller;
   padding-top: 2%;
   padding-left: 2%;
   padding-right: 4%;
-  width: 49%;
+  width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.096);
   border-radius: 5px;
   height: 100%;
   list-style: none;
 }
 
+.artigo-principal h1{
+  margin-top: 20px;
+}
+
 .artigo-principal a{
   text-decoration: none;
   color: #a6130a;
+}
+
+.artigo-principal p{
+  margin-top: 40px;
+}
+
+.artigo-principal p a{
+  color:#333;
 }
 
 .blankspace-artigo-principal{
@@ -248,8 +273,10 @@ font-size:smaller;
 
 .generico1{
   border-bottom: solid rgba(0, 0, 0, 0.247) 1px;
-  position: relative;
+  position: absolute;
   height: 200pt;
+  width: 550pt;
+  margin-top: 520px;
 }
 
 .generico1 img{
@@ -397,5 +424,74 @@ color: #a6130a;
 cursor: pointer;
 }
 
+.menu-drop {
+  position: fixed;
+  top: 45px; /* Posicionado abaixo da navbar */
+  left: 0;
+  width: 250px; /* Largura fixa */
+  height: calc(100% - 45px); /* Altura sem cobrir a navbar */
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1200; /* Acima do overlay */
+  display: none; /* Começa oculto */
+  overflow-y: auto; /* Adiciona rolagem caso necessário */
+}
 
 
+.menu-drop ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-drop ul li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.menu-drop ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-drop ul li a:hover {
+  background-color: #f8f8f8;
+}
+
+.menu-drop-icon {
+  position: fixed;
+  top: 60px;
+  left: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+
+.menu-icon {
+  position: fixed;
+  top: 60px;
+  left: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 250px; /* Alinha o overlay após o menu lateral */
+  width: calc(100% - 250px); /* Cobre apenas a área fora do menu lateral */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; /* Começa oculto */
+  z-index: 999; /* Abaixo do menu lateral */
+}
