@@ -1,15 +1,35 @@
 var menuIcon = document.querySelector('.menu-icon');
-var closeIcon = document.querySelector('.close-icon'); /* Selecione o ícone de fechamento */
-var menu = document.querySelector('.menu');
+var closeIcon = document.querySelector('.close-icon');
+var menu = document.querySelector('.menu-drop');
 
-menuIcon.addEventListener('click', function() {
-  menu.style.display = 'block'; /* Abra o menu */
-  menuIcon.style.display = 'none'; /* Oculte o ícone do menu hambúrguer */
-  closeIcon.style.display = 'block'; /* Mostre o ícone de fechamento */
+// Certifique-se de que o overlay exista no DOM
+var overlay = document.querySelector('.overlay');
+if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    document.body.appendChild(overlay);
+}
+
+// Exibe o menu lateral e o overlay
+menuIcon.addEventListener('click', function () {
+    menu.style.display = 'block'; // Exibe o menu lateral
+    overlay.style.display = 'block'; // Exibe o overlay
+    menuIcon.style.display = 'none'; // Esconde o botão de menu
+    closeIcon.style.display = 'block'; // Mostra o botão de fechar
 });
 
-closeIcon.addEventListener('click', function() {
-  menu.style.display = 'none'; /* Feche o menu */
-  menuIcon.style.display = 'block'; /* Mostre novamente o ícone do menu hambúrguer */
-  closeIcon.style.display = 'none'; /* Oculte o ícone de fechamento */
+// Esconde o menu lateral e o overlay ao clicar no overlay
+overlay.addEventListener('click', function () {
+    menu.style.display = 'none'; // Esconde o menu lateral
+    overlay.style.display = 'none'; // Esconde o overlay
+    menuIcon.style.display = 'block'; // Mostra o botão de menu
+    closeIcon.style.display = 'none'; // Esconde o botão de fechar
+});
+
+// Esconde o menu lateral e o overlay ao clicar no botão de fechar
+closeIcon.addEventListener('click', function () {
+    menu.style.display = 'none'; // Esconde o menu lateral
+    overlay.style.display = 'none'; // Esconde o overlay
+    menuIcon.style.display = 'block'; // Mostra o botão de menu
+    closeIcon.style.display = 'none'; // Esconde o botão de fechar
 });
